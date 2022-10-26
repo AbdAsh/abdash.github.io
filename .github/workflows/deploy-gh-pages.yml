@@ -1,0 +1,31 @@
+name: Nuxt to Github Pages
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  build_vue:
+    runs-on: ubuntu-latest
+    name: Build Vue
+    steps:
+    - uses: actions/checkout@v2
+    - id: Build-Vue
+      uses: ashkantaravati/NuxtToGithubPages@v1.0
+      with:
+        # Your username
+        username: AbdAsh
+        # Your reponame
+        reponame: abdash.github.io
+        # Your Github token
+        token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
+        # Your git commit email
+        gitemail: abdash2011@gmail.com
+        # Your git commit name
+        # gitname: # optional, default is CI
+        # Your git commit message
+        # gitmsg: # optional, default is deploy
+        # Your custom domain
+        cname: abdash.info
