@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Build Vue
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - id: Build-Vue
       uses: ashkantaravati/NuxtToGithubPages@v1.0
       with:
