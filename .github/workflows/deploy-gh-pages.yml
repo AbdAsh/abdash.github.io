@@ -28,4 +28,4 @@ jobs:
         # Your git commit message
         # gitmsg: # optional, default is deploy
         # Your custom domain
-        cname: abdash.info
+        cname: abdash.net
