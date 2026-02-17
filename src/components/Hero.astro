@@ -1,0 +1,188 @@
+---
+---
+
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <div class="constellation"></div>
+  </div>
+
+  <div class="hero-content container">
+    <div class="hero-badge animate-on-scroll">
+      <span class="badge-dot"></span>
+      <span>Available for opportunities</span>
+    </div>
+
+    <div class="hero-logo animate-on-scroll">
+      <img src="/logo.png" alt="AbdAsh Logo" width="120" height="120" class="logo-img" />
+    </div>
+
+    <h1 class="hero-title animate-on-scroll">
+      Abdulrahman <span class="text-gradient">Mahmutoglu</span>
+    </h1>
+
+    <p class="hero-subtitle animate-on-scroll">
+      Senior Frontend & AI Engineer
+    </p>
+
+    <p class="hero-desc animate-on-scroll">
+      Building scalable web architectures with <span class="fw-tag vue">Vue</span> <span class="fw-tag react">React</span> <span class="fw-tag svelte">Svelte</span> & <span class="fw-tag astro">Astro</span>
+    </p>
+
+    <div class="hero-cta animate-on-scroll">
+      <a href="#experience" class="btn btn-primary">Explore My Work</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    </div>
+
+    <div class="hero-scroll-hint animate-on-scroll">
+      <div class="scroll-line"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .constellation {
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 10% 20%, rgba(46, 196, 182, 0.4), transparent),
+      radial-gradient(1px 1px at 30% 65%, rgba(255, 255, 255, 0.3), transparent),
+      radial-gradient(1.5px 1.5px at 50% 10%, rgba(46, 196, 182, 0.5), transparent),
+      radial-gradient(1px 1px at 70% 40%, rgba(255, 255, 255, 0.2), transparent),
+      radial-gradient(1px 1px at 80% 80%, rgba(46, 196, 182, 0.3), transparent),
+      radial-gradient(1.5px 1.5px at 20% 50%, rgba(255, 255, 255, 0.15), transparent),
+      radial-gradient(1px 1px at 90% 15%, rgba(46, 196, 182, 0.4), transparent),
+      radial-gradient(1px 1px at 45% 85%, rgba(255, 255, 255, 0.25), transparent),
+      radial-gradient(1px 1px at 60% 55%, rgba(46, 196, 182, 0.2), transparent),
+      radial-gradient(2px 2px at 15% 90%, rgba(46, 196, 182, 0.6), transparent);
+    animation: float 20s ease-in-out infinite;
+  }
+
+  .hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 100px;
+    background: rgba(46, 196, 182, 0.08);
+    border: 1px solid rgba(46, 196, 182, 0.2);
+    font-size: 0.85rem;
+    color: var(--teal);
+    font-weight: 500;
+  }
+
+  .badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--teal);
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .hero-logo {
+    margin: 8px 0;
+  }
+
+  .logo-img {
+    filter: drop-shadow(0 0 30px rgba(46, 196, 182, 0.3));
+    border-radius: 16px;
+    animation: fadeSlideUp 0.8s ease-out;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--teal), #5de4d6, var(--teal));
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 4s ease-in-out infinite;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    color: var(--silver);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+    color: var(--silver);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .fw-tag {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    padding: 2px 10px;
+    border-radius: 6px;
+    font-weight: 500;
+  }
+
+  .fw-tag.vue { color: var(--vue-green); background: rgba(66,184,131,0.1); }
+  .fw-tag.react { color: var(--react-blue); background: rgba(97,218,251,0.1); }
+  .fw-tag.svelte { color: var(--svelte-orange); background: rgba(255,62,0,0.1); }
+  .fw-tag.astro { color: var(--astro-purple); background: rgba(255,93,1,0.1); }
+
+  .hero-cta {
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-scroll-hint {
+    margin-top: 40px;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, var(--teal), transparent);
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.2rem;
+    }
+    .hero-desc {
+      font-size: 0.9rem;
+    }
+  }
+</style>
