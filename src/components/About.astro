@@ -1,0 +1,104 @@
+---
+---
+
+<section class="about section" id="about">
+  <div class="container">
+    <div class="section-header animate-on-scroll">
+      <span class="island-badge astro">
+        <svg width="14" height="14" viewBox="0 0 256 366" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M182.022 9.147c2.982 3.702 4.502 8.478 7.543 18.031l67.39 211.906c-16.38-9.9-34.65-17.07-54.108-20.975L161.92 87.135a3.23 3.23 0 0 0-3.093-2.357 3.23 3.23 0 0 0-3.09 2.357L114.738 218.18c-19.473 3.828-37.774 10.928-54.2 20.768l67.54-211.978c3.04-9.553 4.56-14.329 7.543-18.03a20 20 0 0 1 8.203-6.164c4.488-1.776 9.53-1.776 19.615-1.776 10.083 0 15.125 0 19.613 1.776a20 20 0 0 1 8.203 6.164Z" fill="currentColor"/><path d="M190.168 279.393c-5.05 4.348-15.634 7.314-27.978 7.314-15.93 0-29.15-5.252-32.816-12.393-1.093 4.905-1.326 10.46-1.326 14.105 0 0-.706 14.7 9.382 24.788 0-5.328 4.319-9.647 9.647-9.647 9.12 0 9.097 7.95 9.08 14.393-.013 4.27-.024 7.875 1.88 11.272 1.58 2.82 4.176 5.141 7.497 6.896-.867-2.856-1.178-5.966-.613-9.198 1.167-6.677 5.813-12.154 12.004-15.566 6.89-3.797 11.273-10.098 11.273-17.148 0-5.463-2.45-10.354-5.897-14.816Z" fill="#FF5D01"/></svg>
+        Built with Astro
+      </span>
+      <h2>About Me</h2>
+    </div>
+
+    <div class="about-grid animate-on-scroll">
+      <div class="about-text">
+        <p>
+          Results-driven Senior Frontend Engineer with <strong>4+&nbsp;years</strong> of professional experience designing,
+          implementing, and optimizing scalable web architectures. From building enterprise-grade UI component libraries
+          with monorepo tooling to architecting AI-driven frontend generation systems — I bridge the gap between
+          cutting-edge technology and exceptional user experience.
+        </p>
+        <p style="margin-top: 16px;">
+          Currently at <strong>Cybernetic Labs</strong> in Istanbul, where I lead frontend architecture
+          decisions, mentor engineers, and build AI-powered development platforms. Previously contributed to
+          production systems at <strong>Megaventory</strong> (Athens) and <strong>OptimumTek</strong> (Istanbul).
+        </p>
+      </div>
+
+      <div class="about-stats">
+        <div class="stat-card glass-card">
+          <span class="stat-number">4+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-card glass-card">
+          <span class="stat-number">4</span>
+          <span class="stat-label">Companies</span>
+        </div>
+        <div class="stat-card glass-card">
+          <span class="stat-number">10+</span>
+          <span class="stat-label">Technologies</span>
+        </div>
+        <div class="stat-card glass-card">
+          <span class="stat-number">3</span>
+          <span class="stat-label">Languages</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: var(--space-xl);
+    align-items: start;
+  }
+
+  .about-text p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  .about-text strong {
+    color: var(--teal);
+    font-weight: 600;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+  }
+
+  .stat-card {
+    text-align: center;
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--teal);
+    font-family: var(--font-heading);
+  }
+
+  .stat-label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--silver);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-family: var(--font-mono);
+  }
+
+  @media (max-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+    }
+  }
+</style>

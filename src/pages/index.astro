@@ -1,0 +1,74 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import AiSection from '../components/AiSection.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+
+import ExperienceTimeline from '../components/islands/ExperienceTimeline';
+import SkillsGrid from '../components/islands/SkillsGrid.vue';
+import ProjectsShowcase from '../components/islands/ProjectsShowcase.svelte';
+
+import '../styles/experience.css';
+---
+
+<MainLayout>
+  <Navbar />
+
+  <main id="main">
+    <Hero />
+    <About />
+
+    <!-- ⚛️ REACT ISLAND — Experience Timeline -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <span class="island-badge react">
+            <svg width="14" height="14" viewBox="0 0 512 512" fill="none"><circle cx="256" cy="256" r="36" fill="#61DAFB"/><ellipse cx="256" cy="256" rx="220" ry="84" stroke="#61DAFB" stroke-width="16" fill="none"/><ellipse cx="256" cy="256" rx="220" ry="84" stroke="#61DAFB" stroke-width="16" fill="none" transform="rotate(60 256 256)"/><ellipse cx="256" cy="256" rx="220" ry="84" stroke="#61DAFB" stroke-width="16" fill="none" transform="rotate(120 256 256)"/></svg>
+            Built with React
+          </span>
+          <h2>Experience</h2>
+          <p>A timeline of my professional journey — powered by React custom hooks</p>
+        </div>
+        <ExperienceTimeline client:visible />
+      </div>
+    </section>
+
+    <!-- 🔥 SVELTE ISLAND — Projects Showcase -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <span class="island-badge svelte">
+            <svg width="14" height="14" viewBox="0 0 98 118" fill="none"><path d="M90 15c-12-11-32-9-43 3L22 47c-3 3-5 7-6 11-1 5 0 10 3 14-2 3-4 7-4 11 0 6 2 12 6 16 12 11 32 9 43-3l25-29c3-3 5-7 6-11 1-5 0-10-3-14 2-3 4-7 4-11 0-6-2-12-6-16z" fill="#FF3E00"/><path d="M40 103c-7-2-12-7-14-13 0-1 0-2 1-3l1-2 1-1 2-2 25-29 2-2 2-1c6-3 14-2 19 3 2 3 4 6 4 10 0 2-1 4-2 5l-1 2-1 1-1 2-25 29-3 2-2 1c-3 1-6 1-8 0z" fill="#fff"/></svg>
+            Built with Svelte
+          </span>
+          <h2>Projects</h2>
+          <p>Notable work and side projects — powered by Svelte's reactive stores</p>
+        </div>
+        <ProjectsShowcase client:visible />
+      </div>
+    </section>
+
+    <!-- 💚 VUE ISLAND — Skills Grid  -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <span class="island-badge vue">
+            <svg width="14" height="14" viewBox="0 0 261 226" fill="none"><path d="M161 3.3L130.5 56 100 3.3H0l130.5 222L261 3.3z" fill="#42B883"/><path d="M161 3.3L130.5 56 100 3.3H52l78.5 134.5L209 3.3z" fill="#35495E"/></svg>
+            Built with Vue
+          </span>
+          <h2>Skills & Technologies</h2>
+          <p>Filter and explore my tech stack — powered by Vue's reactivity system</p>
+        </div>
+        <SkillsGrid client:visible />
+      </div>
+    </section>
+
+    <AiSection />
+    <Contact />
+  </main>
+
+  <Footer />
+</MainLayout>

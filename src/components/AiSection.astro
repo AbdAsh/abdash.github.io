@@ -1,0 +1,151 @@
+---
+---
+
+<section class="ai-section section" id="ai">
+  <div class="container">
+    <div class="section-header animate-on-scroll">
+      <span class="island-badge astro">
+        <svg width="14" height="14" viewBox="0 0 256 366" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M182.022 9.147c2.982 3.702 4.502 8.478 7.543 18.031l67.39 211.906c-16.38-9.9-34.65-17.07-54.108-20.975L161.92 87.135a3.23 3.23 0 0 0-3.093-2.357 3.23 3.23 0 0 0-3.09 2.357L114.738 218.18c-19.473 3.828-37.774 10.928-54.2 20.768l67.54-211.978c3.04-9.553 4.56-14.329 7.543-18.03a20 20 0 0 1 8.203-6.164c4.488-1.776 9.53-1.776 19.615-1.776 10.083 0 15.125 0 19.613 1.776a20 20 0 0 1 8.203 6.164Z" fill="currentColor"/><path d="M190.168 279.393c-5.05 4.348-15.634 7.314-27.978 7.314-15.93 0-29.15-5.252-32.816-12.393-1.093 4.905-1.326 10.46-1.326 14.105 0 0-.706 14.7 9.382 24.788 0-5.328 4.319-9.647 9.647-9.647 9.12 0 9.097 7.95 9.08 14.393-.013 4.27-.024 7.875 1.88 11.272 1.58 2.82 4.176 5.141 7.497 6.896-.867-2.856-1.178-5.966-.613-9.198 1.167-6.677 5.813-12.154 12.004-15.566 6.89-3.797 11.273-10.098 11.273-17.148 0-5.463-2.45-10.354-5.897-14.816Z" fill="#FF5D01"/></svg>
+        Built with Astro
+      </span>
+      <h2>AI & Automation</h2>
+      <p>Building intelligent systems with LLMs, RAG, and workflow orchestration</p>
+    </div>
+
+    <div class="ai-grid animate-on-scroll">
+      <div class="ai-card glass-card glow-astro">
+        <div class="ai-icon">🧠</div>
+        <h3>Agentic AI Systems</h3>
+        <p>Multi-agent frameworks for automated content generation, document processing, and business plan creation with structured outputs and validation layers.</p>
+        <div class="ai-tags">
+          <span class="ai-tag">LLMs</span>
+          <span class="ai-tag">Multi-Agent</span>
+          <span class="ai-tag">JSON Schema</span>
+        </div>
+      </div>
+
+      <div class="ai-card glass-card glow-astro">
+        <div class="ai-icon">🔗</div>
+        <h3>RAG Pipelines</h3>
+        <p>Designed and deployed retrieval-augmented generation pipelines backed by vector databases for contextual data retrieval and knowledge-enhanced responses.</p>
+        <div class="ai-tags">
+          <span class="ai-tag">Vector DB</span>
+          <span class="ai-tag">Embeddings</span>
+          <span class="ai-tag">Retrieval</span>
+        </div>
+      </div>
+
+      <div class="ai-card glass-card glow-astro">
+        <div class="ai-icon">🔄</div>
+        <h3>n8n Workflow Orchestration</h3>
+        <p>End-to-end workflow automation integrating MCP servers, AI tools, webhooks, and external services for seamless system orchestration.</p>
+        <div class="ai-tags">
+          <span class="ai-tag">n8n</span>
+          <span class="ai-tag">MCP</span>
+          <span class="ai-tag">Webhooks</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Placeholder for future live AI demo -->
+    <div class="ai-demo-placeholder animate-on-scroll">
+      <div class="demo-card glass-card">
+        <div class="demo-icon">✨</div>
+        <h3>Live AI Demo</h3>
+        <p>An interactive AI experience powered by n8n workflows is coming soon.</p>
+        <span class="coming-soon">Coming Soon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .ai-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .ai-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ai-icon {
+    font-size: 2rem;
+  }
+
+  .ai-card h3 {
+    font-size: 1.15rem;
+    margin: 0;
+  }
+
+  .ai-card p {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .ai-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: auto;
+  }
+
+  .ai-tag {
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-family: var(--font-mono);
+    background: rgba(255, 93, 1, 0.08);
+    color: var(--astro-purple);
+    border: 1px solid rgba(255, 93, 1, 0.15);
+  }
+
+  .ai-demo-placeholder {
+    text-align: center;
+  }
+
+  .demo-card {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .demo-icon {
+    font-size: 2.5rem;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .demo-card h3 {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+  .demo-card p {
+    margin: 0;
+  }
+
+  .coming-soon {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--astro-purple);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 4px 12px;
+    border: 1px solid rgba(255, 93, 1, 0.3);
+    border-radius: 100px;
+  }
+
+  @media (max-width: 768px) {
+    .ai-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

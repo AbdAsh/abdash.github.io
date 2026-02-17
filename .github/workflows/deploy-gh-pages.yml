@@ -1,35 +1,46 @@
-name: Nuxt to Github Pages
+name: Deploy Astro to GitHub Pages
+
 on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
-  build_vue:
+  build:
     runs-on: ubuntu-latest
-    name: Build Vue
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Node.js 16
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'
-    - id: Build-Vue
-      uses: ashkantaravati/NuxtToGithubPages@v1.0
-      with:
-        # Your username
-        username: AbdAsh
-        # Your reponame
-        reponame: abdash.github.io
-        # Your Github token
-        token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
-        # Your git commit email
-        gitemail: abdash2011@gmail.com
-        # Your git commit name
-        # gitname: # optional, default is CI
-        # Your git commit message
-        # gitmsg: # optional, default is deploy
-        # Your custom domain
-        cname: abdash.net
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
