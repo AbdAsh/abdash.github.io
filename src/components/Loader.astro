@@ -24,6 +24,8 @@
         if (loader) {
             setTimeout(() => {
                 loader.classList.add("loader-hidden");
+                // Dispatch event for main content to animate in
+                window.dispatchEvent(new CustomEvent("loader-complete"));
                 setTimeout(() => {
                     loader.style.display = "none";
                 }, 3000); // 1.5s fade out

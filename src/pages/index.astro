@@ -11,7 +11,7 @@ import "../styles/experience.css";
 
   <div class="dashboard">
     <!-- ═══ PROFILE SIDEBAR ═══ -->
-    <aside class="profile-card glass-panel">
+    <aside class="profile-card glass-panel" id="profile-card">
       <div class="profile-top">
         <img
           src="/logo.png"
@@ -153,7 +153,7 @@ import "../styles/experience.css";
     </aside>
 
     <!-- ═══ CONTENT PANEL ═══ -->
-    <main class="content-panel glass-panel">
+    <main class="content-panel glass-panel" id="content-panel">
       <nav class="tab-bar" role="tablist">
         <button
           class="tab active"
@@ -657,6 +657,18 @@ import "../styles/experience.css";
 
     // Initialize color CSS properties
     setActiveColor("about");
+
+    // ═══ ENTRANCE ANIMATIONS ═══
+    window.addEventListener("loader-complete", () => {
+      const profile = document.getElementById("profile-card");
+      const content = document.getElementById("content-panel");
+
+      if (profile) profile.classList.add("loaded");
+
+      setTimeout(() => {
+        if (content) content.classList.add("loaded");
+      }, 200); // Slight delay for staggered effect
+    });
   </script>
 </MainLayout>
 
@@ -683,6 +695,27 @@ import "../styles/experience.css";
   }
 
   /* ═══ PROFILE SIDEBAR ═══ */
+  .profile-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .profile-card.loaded {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .content-panel {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .content-panel.loaded {
+    opacity: 1;
+    transform: translateY(0);
+  }
   .profile-card {
     display: flex;
     flex-direction: column;
@@ -1300,6 +1333,14 @@ import "../styles/experience.css";
     }
     .tab-content {
       padding: 14px;
+    }
+  }
+  /* Ensure visible on mobile if JS fails or loader is skipped (fallback) */
+  @media (prefers-reduced-motion: reduce) {
+    .profile-card,
+    .content-panel {
+      opacity: 1 !important;
+      transform: none !important;
     }
   }
 </style>
