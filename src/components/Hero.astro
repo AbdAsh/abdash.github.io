@@ -42,11 +42,13 @@
 <style>
   .hero {
     min-height: 100vh;
+    min-height: 100dvh; /* Better mobile support */
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
+    padding: 2rem 0; /* Ensure content isn't cut off on short screens */
   }
 
   .hero-bg {
@@ -80,6 +82,7 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    width: 100%; /* Ensure container width applies */
   }
 
   .hero-badge {
@@ -180,9 +183,14 @@
   @media (max-width: 768px) {
     .hero-title {
       font-size: 2.2rem;
+      padding-inline: 10px; /* Prevent edge touching */
     }
     .hero-desc {
       font-size: 0.9rem;
+      padding-inline: 10px;
+    }
+    .hero-bg {
+      background: radial-gradient(circle at center, #1B3A4B 0%, #070f18 100%); /* Fallback for mobile if needed */
     }
   }
 </style>

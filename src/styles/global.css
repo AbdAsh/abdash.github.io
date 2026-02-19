@@ -58,6 +58,14 @@
   --color-shift: 0.8s ease;
 }
 
+/* ===== UTILITIES ===== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
 /* ===== RESET & BASE ===== */
 *,
 *::before,
