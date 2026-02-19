@@ -1,5 +1,6 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
+import Loader from "../components/Loader.astro";
 
 interface Props {
   title?: string;
@@ -7,19 +8,22 @@ interface Props {
 }
 
 const {
-  title = 'Abdulrahman Mahmutoglu — Senior Frontend & AI Engineer | abdash',
-  description = 'Senior Frontend & AI Engineer specializing in Vue, React, Svelte, and Astro. Building scalable web architectures and AI-driven systems.',
+  title = "Abdulrahman Mahmutoglu — Senior Frontend & AI Engineer | abdash",
+  description = "Senior Frontend & AI Engineer specializing in Vue, React, Svelte, and Astro. Building scalable web architectures and AI-driven systems.",
 } = Astro.props;
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="author" content="Abdulrahman Mahmutoglu" />
-    <meta name="keywords" content="abdash, Abdulrahman Mahmutoglu, frontend engineer, senior software engineer, Vue, React, Svelte, Astro, portfolio" />
+    <meta
+      name="keywords"
+      content="abdash, Abdulrahman Mahmutoglu, frontend engineer, senior software engineer, Vue, React, Svelte, Astro, portfolio"
+    />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -39,7 +43,10 @@ const {
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png" />
@@ -47,25 +54,34 @@ const {
     <title>{title}</title>
 
     <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Abdulrahman Mahmutoglu",
-      "alternateName": "abdash",
-      "url": "https://abdash.net",
-      "jobTitle": "Senior Frontend & AI Engineer",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Cybernetic Labs"
-      },
-      "sameAs": [
-        "https://github.com/AbdAsh",
-        "https://linkedin.com/in/abdash"
-      ],
-      "knowsAbout": ["Frontend Development", "Vue.js", "React", "Svelte", "Astro", "AI/ML", "n8n"]
-    })} />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: "Abdulrahman Mahmutoglu",
+        alternateName: "abdash",
+        url: "https://abdash.net",
+        jobTitle: "Senior Frontend & AI Engineer",
+        worksFor: {
+          "@type": "Organization",
+          name: "Cybernetic Labs",
+        },
+        sameAs: ["https://github.com/AbdAsh", "https://linkedin.com/in/abdash"],
+        knowsAbout: [
+          "Frontend Development",
+          "Vue.js",
+          "React",
+          "Svelte",
+          "Astro",
+          "AI/ML",
+          "n8n",
+        ],
+      })}
+    ></script>
   </head>
   <body>
+    <Loader />
     <slot />
   </body>
 </html>
