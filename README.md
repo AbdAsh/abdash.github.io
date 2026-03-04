@@ -1,43 +1,50 @@
-# Astro Starter Kit: Minimal
+# abdash.net — Personal Portfolio
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Source for [abdash.net](https://abdash.net), the personal portfolio of **Abdulrahman Mahmutoglu** — Senior Frontend & AI Engineer.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Built with [Astro](https://astro.build) as the static site framework, with interactive islands powered by React, Vue, and Svelte.
 
-## 🚀 Project Structure
+## ✨ Sections
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Hero** — intro with availability badge
+- **Experience** — animated timeline (React island)
+- **Projects** — filterable showcase (Svelte island)
+- **Skills** — grid with proficiency indicators (Vue island)
+- **AI** — AI & automation project highlights
+- **About / Contact** — bio and contact form
+
+## 🗂 Project Structure
 
 ```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+src/
+├── components/
+│   ├── islands/
+│   │   ├── ExperienceTimeline.tsx   # React
+│   │   ├── ProjectsShowcase.svelte  # Svelte
+│   │   └── SkillsGrid.vue           # Vue
+│   └── *.astro                      # Static Astro components
+├── layouts/
+│   └── MainLayout.astro
+├── pages/
+│   └── index.astro
+└── styles/
+    └── global.css
 ```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
 
 ## 🧞 Commands
 
-All commands are run from the root of the project, from a terminal:
+| Command           | Action                                      |
+| :---------------- | :------------------------------------------ |
+| `npm install`     | Install dependencies                        |
+| `npm run dev`     | Start local dev server at `localhost:4321`  |
+| `npm run build`   | Build production site to `./dist/`          |
+| `npm run preview` | Preview build locally before deploying      |
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 🛠 Tech Stack
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **Astro** — static site generation with island architecture
+- **React** — experience timeline component
+- **Vue 3** — skills grid component
+- **Svelte 5** — projects showcase component
+- **TypeScript** — throughout
+- **GitHub Pages** — hosting via `abdash.net` custom domain
