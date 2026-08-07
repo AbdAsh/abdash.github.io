@@ -108,8 +108,16 @@ allocation** — it touches only `platform.usage_counters`.
 
 ## Success criteria
 
-- The bundled sample answers "which month had the highest revenue and why is it an outlier?"
-  correctly, with a chart, in one round-trip, on a cold visit.
+- ~~The bundled sample answers "which month had the highest revenue and why is it an outlier?"
+  correctly, with a chart, in one round-trip, on a cold visit.~~
+  **Revised 2026-08-07, against the deployed planner.** It answers the *which* correctly and in
+  one round-trip — `2025-03` — but returns a bare `ORDER BY … LIMIT 1`: one row, no chart, and no
+  account of *why*. Reproduced four times; it is how the planner reads that question, not a bad
+  sample. The criterion asked one question to do three jobs.
+  The replacement, which the saved example demonstrates: **the sample answers the *which* in one
+  round-trip, a follow-up supplies the *why* resolved from prior SQL rather than prior results,
+  and a third question produces a chart.** That is a truer test of the product anyway — the
+  follow-up is the one that proves conversation state carries SQL and never rows.
 - **The DevTools network tab during a full session shows zero requests carrying row data** — only
   schema and sample payloads to `asksheet-plan`, and none of the latter in strict mode. This check
   is documented in the README as the proof-of-claim.
