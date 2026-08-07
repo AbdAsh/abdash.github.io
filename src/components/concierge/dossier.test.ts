@@ -27,18 +27,36 @@ describe('dossier', () => {
     expect(dossier).toContain('scripts/build-dossier.ts')
   })
 
+  /**
+   * Derived from the timeline rather than hard-coded against it.
+   *
+   * This assertion used to list the roles as literals, which meant a CV update
+   * failed the test for the correct reason with a misleading message: the
+   * dossier was right and the test was stale. Reading the same source the
+   * generator reads makes the test answer the question it is actually asking —
+   * did every job in the timeline survive extraction — and keeps it true the
+   * next time the CV changes.
+   */
   it('carries every employer and role from the timeline', () => {
-    for (const company of ['Cybernetic Labs', 'Megaventory', 'OptimumTek']) {
-      expect(dossier).toContain(company)
-    }
-    for (const role of [
-      'Senior Frontend Engineer',
-      'Frontend Engineer',
-      'Web Developer (Erasmus+)',
-      'Frontend Developer',
-    ]) {
-      expect(dossier).toContain(role)
-    }
+    const timeline = readFileSync(
+      fileURLToPath(new URL('../islands/ExperienceTimeline.tsx', import.meta.url)),
+      'utf8',
+    )
+    const jobs = timeline.slice(
+      timeline.indexOf('const jobs: Job[] ='),
+      timeline.indexOf('];', timeline.indexOf('const jobs: Job[] =')),
+    )
+
+    const roles = [...jobs.matchAll(/role:\s*'([^']+)'/g)].map((m) => m[1])
+    const companies = [...jobs.matchAll(/company:\s*'([^']+)'/g)].map((m) => m[1])
+
+    // If the extraction above breaks, every loop below passes vacuously — which
+    // is precisely the silent success this file exists to prevent.
+    expect(roles.length).toBeGreaterThanOrEqual(4)
+    expect(companies.length).toBe(roles.length)
+
+    for (const company of new Set(companies)) expect(dossier).toContain(company)
+    for (const role of new Set(roles)) expect(dossier).toContain(role)
   })
 
   it('does not present the in-build projects as shipped', () => {

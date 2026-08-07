@@ -59,18 +59,38 @@ interface Job {
     promoted?: boolean;
 }
 
+/**
+ * Source of truth: "Abdulrahman Mahmutoglu - Senior AI Fullstack Engineer.pdf".
+ * The concierge's dossier is GENERATED from this array by scripts/build-dossier.ts,
+ * so an edit here is also an edit to what the voice agent says out loud — run
+ * `npm run dossier` after changing it, and redeploy concierge-turn.
+ *
+ * `period` must keep the `MM/YYYY` shape; the dossier builder parses it to sort
+ * the timeline and throws rather than emitting an undated job.
+ */
 const jobs: Job[] = [
     {
-        role: 'Senior Frontend Engineer',
+        role: 'Senior AI Fullstack Engineer',
+        company: 'Apex Health',
+        location: 'Lusail, Qatar',
+        period: '02/2026 – Present',
+        highlights: [
+            'Design and implement AI-driven automation across departments, with minimal disruption to running operations',
+            'Work cross-functionally to find operational pain points and deploy automation aimed at those specifically',
+        ],
+    },
+    {
+        role: 'Senior Software Engineer',
         company: 'Cybernetic Labs',
         location: 'Istanbul, Turkey',
-        period: '02/2024 – Present',
+        period: '02/2024 – 03/2026',
         promoted: true,
         highlights: [
-            'Architected and implemented an AI-driven frontend generation system using a multi-agent framework',
-            'Design and implement scalable front-end architectures, making informed decisions on frameworks and tools',
-            'Implemented a Monorepo of NPM UI component libraries with CI/CD using Lerna & Nx',
-            'Supervise and mentor a team while reviewing PRs and maintaining documentation',
+            'Architected an agentic AI system for automated business plan creation: LLM-powered multi-agent pipelines with enforced JSON schema output',
+            'Designed and deployed RAG pipelines backed by vector databases for contextual retrieval and document segmentation',
+            'Built AI agents for document editing, refinement and template extraction; orchestrated the workflows end to end with n8n and MCP servers',
+            'Implemented a monorepo of NPM component libraries with CI/CD using Lerna and Nx; ran code review and mentoring',
+            'Built secure web interfaces talking to the AI systems over authenticated webhooks, deployed in Docker behind Nginx',
         ],
     },
     {
@@ -79,31 +99,28 @@ const jobs: Job[] = [
         location: 'Istanbul, Turkey',
         period: '10/2022 – 02/2024',
         highlights: [
-            'Research and develop innovative frontend solutions using emerging technologies',
-            'Created DevOps pipelines utilizing native deployment or Docker with Nginx',
-            'Implemented automatic code generation using Microfrontends, Mako Templates, and Python',
+            'Developed an AI-driven frontend generation system using micro-frontends, Mako templates and Python scripting to automate UI creation',
+            'Built reusable component libraries with Vue 2/3, Nuxt 2/3, Storybook and SCSS; configured Webpack and the DevOps pipelines',
         ],
     },
     {
         role: 'Web Developer (Erasmus+)',
         company: 'Megaventory',
         location: 'Athens, Greece',
-        period: '04/2022 – 10/2022',
+        period: '05/2022 – 08/2022',
         highlights: [
             'Developed full-stack features in a production .NET environment',
-            'Debugged and tested optimized application parts using Stackify Prefix and SQL Profiler',
-            'Researched minification and bundling solutions for frontend assets in .NET',
+            'Profiled and optimised application performance using SQL Profiler and Stackify Prefix',
         ],
     },
     {
         role: 'Frontend Developer',
-        company: 'OptimumTek',
+        company: 'OptimumTek / Cybernetic Labs',
         location: 'Istanbul, Turkey',
-        period: '06/2021 – 01/2022',
+        period: '06/2021 – 04/2022',
         highlights: [
-            'Developed various UI projects utilizing Vue 2 & 3',
-            'Integrated WebSockets using Socket.IO with VueJS for real-time features',
-            'Managed handover of multiple UI solutions with ongoing support',
+            'Built responsive UI with Vue 2/3, Nuxt and SCSS',
+            'Integrated real-time features over Socket.IO and worked in a Storybook component system',
         ],
     },
 ];
