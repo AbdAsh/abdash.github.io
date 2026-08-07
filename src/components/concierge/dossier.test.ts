@@ -59,11 +59,23 @@ describe('dossier', () => {
     for (const role of new Set(roles)) expect(dossier).toContain(role)
   })
 
-  it('does not present the in-build projects as shipped', () => {
-    expect(dossier).toContain('not shipped products')
-    // The seven do not exist yet. An agent offering to link to them would be
-    // sending people to 404s.
-    expect(dossier).toMatch(/do not (describe|offer)/i)
+  /**
+   * This used to assert the dossier said "not shipped products" and forbade
+   * offering links, because at the time none of the seven existed. Six are now
+   * deployed, so that guard had become a rule against telling the truth — an
+   * agent denying work a visitor can open in the next tab.
+   *
+   * The intent it was protecting survives and is what is asserted now: a demo
+   * may be described as live, but never as a commercial product with users.
+   * That is the claim that would actually be a lie.
+   */
+  it('lets the agent say the demos are live without overclaiming them', () => {
+    expect(dossier).toMatch(/live and reachable at labs\.abdash\.net/i)
+    expect(dossier).toMatch(/not commercial products/i)
+    expect(dossier).toMatch(/do not claim users, customers or revenue/i)
+    // The seventh is not on that origin, and saying so is the whole point of
+    // naming it separately.
+    expect(dossier).toMatch(/Concierge[\s\S]{0,120}embedded on abdash\.net/i)
   })
 
   it('tells the agent to speak in the third person', () => {

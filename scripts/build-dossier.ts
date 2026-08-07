@@ -428,12 +428,21 @@ function build(): string {
   /* ai tab */
   w('## The AI tab projects')
   w()
+  // Written while none of these existed yet. Six are now deployed and publicly
+  // reachable, so the old wording had the agent denying the existence of work a
+  // visitor can open in the next tab, and refusing to hand over the address.
+  // Kept honest in the other direction too: they are demos under active
+  // development rather than products, and the Concierge is not on labs.
   w(
-    '**Status: these seven are in active development, not shipped products.** They are being ' +
-      'built through 2026 as a single program sharing one platform layer — one monorepo, one ' +
-      'Cloudflare Pages origin, one Supabase project, one login across all of them. Describe ' +
-      'them as in progress or in build. Do not describe any of them as live, launched, ' +
-      'released, or in production, and do not offer links to them.',
+    '**Status: six of these are live and reachable at labs.abdash.net — Recto, AskSheet, ' +
+      'Critiq, RAG Lab, GraphRead and PlaneMode, each at labs.abdash.net slash its name. They ' +
+      'are working demos under active development, not commercial products, and each opens on ' +
+      'a saved example so nothing needs setting up to see it. The seventh is the Concierge — ' +
+      'the agent speaking now — which is embedded on abdash.net itself, not on labs.** ' +
+      'They share one platform layer: one monorepo, one Cloudflare origin, one Supabase ' +
+      'project, one anonymous login across all of them. It is fine to say a demo is live and ' +
+      'to say where it is when asked. Do not call any of them finished or commercial, and do ' +
+      'not claim users, customers or revenue for them.',
   )
   w()
   for (const s of specs) {
