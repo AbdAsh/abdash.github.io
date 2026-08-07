@@ -325,52 +325,140 @@ import "../styles/experience.css";
           <SkillsGrid client:idle />
         </div>
 
-        <!-- ── AI ── -->
+        <!-- ── AI ──
+             Six deployed applications, not three claims about capability. Each
+             card is a real link into labs.abdash.net and carries that app's own
+             accent, which it lends to the whole page on hover. -->
         <div class="tab-panel" id="panel-ai" role="tabpanel">
-          <h2 style="margin-bottom: 16px;">AI & Automation</h2>
-          <div class="ai-grid">
-            <div class="ai-card glass-card glow-ai">
-              <div class="ai-icon">🧠</div>
-              <h3>Agentic AI Systems</h3>
-              <p>
-                Multi-agent frameworks for automated content generation,
-                document processing, and business plan creation with structured
-                outputs.
+          <div class="labs-head">
+            <div>
+              <h2>abdash labs</h2>
+              <p class="labs-lede">
+                Six applications sharing one account, one database and one
+                deploy. Each opens on a <strong>finished example</strong> —
+                real saved output, no signup, nothing to prepare.
               </p>
-              <div class="ai-tags">
-                <span class="ai-tag">LLMs</span><span class="ai-tag"
-                  >Multi-Agent</span
-                ><span class="ai-tag">JSON Schema</span>
-              </div>
             </div>
-            <div class="ai-card glass-card glow-ai">
-              <div class="ai-icon">🔗</div>
-              <h3>RAG Pipelines</h3>
-              <p>
-                Retrieval-augmented generation pipelines backed by vector
-                databases for contextual data retrieval and knowledge-enhanced
-                responses.
-              </p>
-              <div class="ai-tags">
-                <span class="ai-tag">Vector DB</span><span class="ai-tag"
-                  >Embeddings</span
-                ><span class="ai-tag">Retrieval</span>
-              </div>
-            </div>
-            <div class="ai-card glass-card glow-ai">
-              <div class="ai-icon">🔄</div>
-              <h3>n8n Orchestration</h3>
-              <p>
-                End-to-end workflow automation integrating MCP servers, AI
-                tools, webhooks, and external services for seamless
-                orchestration.
-              </p>
-              <div class="ai-tags">
-                <span class="ai-tag">n8n</span><span class="ai-tag">MCP</span
-                ><span class="ai-tag">Webhooks</span>
-              </div>
-            </div>
+            <a
+              class="labs-all"
+              href="https://labs.abdash.net/"
+              target="_blank"
+              rel="noopener"
+            >
+              labs.abdash.net <span aria-hidden="true">↗</span>
+            </a>
           </div>
+
+          <div class="labs-grid">
+            <a
+              class="lab-card glass-card"
+              href="https://labs.abdash.net/recto/"
+              target="_blank"
+              rel="noopener"
+              style="--lab-r:139; --lab-g:92; --lab-b:246; --i:0"
+            >
+              <span class="lab-dot" aria-hidden="true"></span>
+              <h3>Recto</h3>
+              <p>
+                Multi-document notebooks where every answer names the document
+                it came from.
+              </p>
+              <div class="lab-tags">
+                <span>pgvector</span><span>citations</span><span>streaming</span>
+              </div>
+            </a>
+
+            <a
+              class="lab-card glass-card"
+              href="https://labs.abdash.net/asksheet/"
+              target="_blank"
+              rel="noopener"
+              style="--lab-r:46; --lab-g:196; --lab-b:182; --i:1"
+            >
+              <span class="lab-dot" aria-hidden="true"></span>
+              <h3>AskSheet</h3>
+              <p>
+                Ask a spreadsheet in English. The data never leaves the browser
+                — check the network tab.
+              </p>
+              <div class="lab-tags">
+                <span>DuckDB WASM</span><span>text-to-SQL</span><span>local</span>
+              </div>
+            </a>
+
+            <a
+              class="lab-card glass-card"
+              href="https://labs.abdash.net/critiq/"
+              target="_blank"
+              rel="noopener"
+              style="--lab-r:240; --lab-g:169; --lab-b:59; --i:2"
+            >
+              <span class="lab-dot" aria-hidden="true"></span>
+              <h3>Critiq</h3>
+              <p>
+                SEO and answer-engine review of any URL. Its self-audit of this
+                site is not flattering.
+              </p>
+              <div class="lab-tags">
+                <span>SEO</span><span>structured output</span><span>permalinks</span>
+              </div>
+            </a>
+
+            <a
+              class="lab-card glass-card"
+              href="https://labs.abdash.net/raglab/"
+              target="_blank"
+              rel="noopener"
+              style="--lab-r:78; --lab-g:168; --lab-b:245; --i:3"
+            >
+              <span class="lab-dot" aria-hidden="true"></span>
+              <h3>RAG Lab</h3>
+              <p>
+                Which chunking strategy actually wins? Benchmarks rather than
+                vibes — and the expensive model lost.
+              </p>
+              <div class="lab-tags">
+                <span>embeddings</span><span>evaluation</span><span>recall@k</span>
+              </div>
+            </a>
+
+            <a
+              class="lab-card glass-card"
+              href="https://labs.abdash.net/graphread/"
+              target="_blank"
+              rel="noopener"
+              style="--lab-r:228; --lab-g:86; --lab-b:154; --i:4"
+            >
+              <span class="lab-dot" aria-hidden="true"></span>
+              <h3>GraphRead</h3>
+              <p>
+                A document as an entity graph. Click any edge for the sentence
+                that justified it.
+              </p>
+              <div class="lab-tags">
+                <span>extraction</span><span>force layout</span><span>provenance</span>
+              </div>
+            </a>
+
+            <a
+              class="lab-card glass-card"
+              href="https://labs.abdash.net/planemode/"
+              target="_blank"
+              rel="noopener"
+              style="--lab-r:95; --lab-g:208; --lab-b:138; --i:5"
+            >
+              <span class="lab-dot" aria-hidden="true"></span>
+              <h3>PlaneMode</h3>
+              <p>
+                A language model running entirely in the browser. Turn on
+                airplane mode and keep going.
+              </p>
+              <div class="lab-tags">
+                <span>WebGPU</span><span>WebLLM</span><span>offline</span>
+              </div>
+            </a>
+          </div>
+
           <div class="concierge-card glass-card">
             <Concierge client:visible />
           </div>
@@ -443,6 +531,48 @@ import "../styles/experience.css";
     tabs.forEach((tab) => {
       tab.addEventListener("click", () => switchTab(tab.dataset.tab!));
     });
+
+    // ═══ LAB CARDS BORROW THE PAGE ═══
+    // Hovering a lab card retints the entire page — starfield, glow, borders,
+    // scrollbar — in that app's colour, then hands it back on the way out.
+    // The apps on labs.abdash.net use these exact triples, so the hover is a
+    // genuine preview of where the link goes rather than a decorative flourish.
+    // The property is registered with @property, so both directions tween.
+    const AI_ACCENT: [number, number, number] = TAB_COLORS.ai;
+
+    document
+      .querySelectorAll<HTMLAnchorElement>(".lab-card")
+      .forEach((card) => {
+        const read = (n: string) =>
+          Number(getComputedStyle(card).getPropertyValue(`--lab-${n}`).trim());
+        const hue: [number, number, number] = [read("r"), read("g"), read("b")];
+
+        // Only while the AI tab is the visible one. A hover cannot happen on a
+        // hidden panel today, but leaving the guard out means the first person
+        // to make these reachable elsewhere gets a colour bug instead of nothing.
+        const borrow = () => {
+          if (!document.getElementById("panel-ai")?.classList.contains("active")) return;
+          const root = document.documentElement;
+          root.style.setProperty("--accent-r", String(hue[0]));
+          root.style.setProperty("--accent-g", String(hue[1]));
+          root.style.setProperty("--accent-b", String(hue[2]));
+          targetColor = hue;
+        };
+        const give_back = () => {
+          const root = document.documentElement;
+          root.style.setProperty("--accent-r", String(AI_ACCENT[0]));
+          root.style.setProperty("--accent-g", String(AI_ACCENT[1]));
+          root.style.setProperty("--accent-b", String(AI_ACCENT[2]));
+          targetColor = AI_ACCENT;
+        };
+
+        card.addEventListener("mouseenter", borrow);
+        card.addEventListener("mouseleave", give_back);
+        // Keyboard users get the same thing; tabbing through the grid should
+        // not be a silent version of the experience.
+        card.addEventListener("focus", borrow);
+        card.addEventListener("blur", give_back);
+      });
 
     document.addEventListener("keydown", (e) => {
       const n = parseInt(e.key);
@@ -1042,43 +1172,133 @@ import "../styles/experience.css";
     line-height: 1.5;
   }
 
-  /* ═══ AI PANEL ═══ */
-  .ai-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
+  /* ═══ AI PANEL — the labs ═══ */
+  .labs-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
   }
-  .ai-card {
+
+  .labs-lede {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    max-width: 58ch;
+    margin-top: 6px;
+  }
+  .labs-lede strong {
+    color: var(--accent);
+    font-weight: 600;
+    transition: color var(--color-shift);
+  }
+
+  .labs-all {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    border-radius: 100px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.02em;
+    color: var(--accent);
+    background: var(--accent-glow);
+    border: 1px solid var(--accent-border);
+    transition:
+      background var(--duration-fast) var(--ease-smooth),
+      color var(--duration-fast) var(--ease-smooth),
+      transform var(--duration-fast) var(--ease-smooth),
+      border-color var(--color-shift);
+  }
+  .labs-all:hover {
+    color: #fff;
+    background: var(--accent-soft);
+    transform: translateY(-1px);
+  }
+
+  /* auto-fit rather than a fixed column count: the panel is a flexible width
+     inside a resizable dashboard, and breakpoints for a card grid are busywork. */
+  .labs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 12px;
+  }
+
+  /* Each card carries its own hue in --lab-*, which is the same triple the app
+     itself uses on labs.abdash.net. Hovering lends that hue to the whole page
+     (see the script below), so the card previews the place it leads to. */
+  .lab-card {
+    --lab: rgb(var(--lab-r), var(--lab-g), var(--lab-b));
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
+    padding: 16px !important;
+    color: inherit;
+    text-decoration: none;
+    animation: panelFadeIn 0.5s var(--ease-smooth) both;
+    animation-delay: calc(var(--i, 0) * 55ms);
   }
-  .ai-icon {
-    font-size: 1.5rem;
+
+  .lab-card:hover,
+  .lab-card:focus-visible {
+    border-color: rgba(var(--lab-r), var(--lab-g), var(--lab-b), 0.4);
+    box-shadow:
+      0 16px 48px rgba(0, 0, 0, 0.32),
+      0 0 24px rgba(var(--lab-r), var(--lab-g), var(--lab-b), 0.1);
   }
-  .ai-card h3 {
-    font-size: 1rem;
+
+  .lab-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--lab);
+    box-shadow: 0 0 10px rgba(var(--lab-r), var(--lab-g), var(--lab-b), 0.7);
+    transition: transform var(--duration-normal) var(--ease-smooth);
+  }
+  .lab-card:hover .lab-dot {
+    transform: scale(1.35);
+  }
+
+  .lab-card h3 {
+    font-size: 0.95rem;
     margin: 0;
+    transition: color var(--duration-fast) var(--ease-smooth);
   }
-  .ai-card p {
-    font-size: 0.8rem;
+  .lab-card:hover h3 {
+    color: var(--lab);
+  }
+
+  .lab-card p {
+    font-size: 0.78rem;
     line-height: 1.55;
     margin: 0;
   }
-  .ai-tags {
+
+  .lab-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 4px;
     margin-top: auto;
+    padding-top: 8px;
   }
-  .ai-tag {
-    padding: 2px 8px;
+  .lab-tags span {
+    padding: 2px 7px;
     border-radius: 5px;
-    font-size: 0.6rem;
+    font-size: 0.58rem;
     font-family: var(--font-mono);
-    background: rgba(139, 92, 246, 0.08);
-    color: #8b5cf6;
-    border: 1px solid rgba(139, 92, 246, 0.2);
+    color: var(--silver);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    transition:
+      color var(--duration-normal) var(--ease-smooth),
+      border-color var(--duration-normal) var(--ease-smooth);
+  }
+  .lab-card:hover .lab-tags span {
+    color: var(--lab);
+    border-color: rgba(var(--lab-r), var(--lab-g), var(--lab-b), 0.28);
   }
 
   /* The concierge island replaces the old "Coming Soon" demo card. */
@@ -1246,8 +1466,12 @@ import "../styles/experience.css";
     .about-layout {
       grid-template-columns: 1fr;
     }
-    .ai-grid {
+    .labs-grid {
       grid-template-columns: 1fr;
+    }
+    .labs-head {
+      flex-direction: column;
+      gap: 10px;
     }
     .contact-grid {
       grid-template-columns: 1fr;
