@@ -515,7 +515,40 @@ import "../styles/experience.css";
     const tabs = document.querySelectorAll<HTMLButtonElement>(".tab");
     const panels = document.querySelectorAll<HTMLDivElement>(".tab-panel");
 
-    function switchTab(target: string) {
+    // ═══ TABS IN THE URL ═══
+    // The dashboard is one page, so without this every tab is the same address
+    // and nothing here can be linked to, bookmarked, shared or reached by the
+    // back button. `?tab=ai` is now the front door for labs.abdash.net, so the
+    // AI panel in particular has to be addressable.
+    const TAB_NAMES = ["about", "experience", "projects", "skills", "ai"];
+    const DEFAULT_TAB = "about";
+
+    function tabFromUrl(): string {
+      const asked = new URLSearchParams(window.location.search).get("tab");
+      return asked && TAB_NAMES.includes(asked) ? asked : DEFAULT_TAB;
+    }
+
+    /**
+     * `replaceState`, not `pushState`. Clicking through five tabs should not
+     * bury the page the visitor arrived from under five history entries —
+     * pressing back ought to leave the site, not walk the nav backwards.
+     * The default tab drops the parameter entirely so the canonical URL stays
+     * clean for anyone landing on it fresh.
+     */
+    function writeTabToUrl(target: string) {
+      try {
+        const url = new URL(window.location.href);
+        if (target === DEFAULT_TAB) url.searchParams.delete("tab");
+        else url.searchParams.set("tab", target);
+        if (url.href !== window.location.href) {
+          window.history.replaceState(window.history.state, "", url);
+        }
+      } catch {
+        /* replaceState is refused on some sandboxed origins; the tab still switches */
+      }
+    }
+
+    function switchTab(target: string, updateUrl = true) {
       tabs.forEach((t) => {
         t.classList.toggle("active", t.dataset.tab === target);
         t.setAttribute("aria-selected", String(t.dataset.tab === target));
@@ -524,6 +557,8 @@ import "../styles/experience.css";
         p.classList.toggle("active", p.id === `panel-${target}`)
       );
       setActiveColor(target);
+      document.documentElement.dataset.tab = target;
+      if (updateUrl) writeTabToUrl(target);
     }
 
     tabs.forEach((tab) => {
@@ -771,8 +806,14 @@ import "../styles/experience.css";
     }
     requestAnimationFrame(animate);
 
-    // Initialize color CSS properties
-    setActiveColor("about");
+    // Open on whatever the URL asked for. `false` because the address is
+    // already correct — rewriting it here would strip `?tab=` on arrival, which
+    // is exactly the link someone just followed.
+    switchTab(tabFromUrl(), false);
+
+    // Someone who edits the address bar, or arrives via a history entry from
+    // before this existed, still lands on the right panel.
+    window.addEventListener("popstate", () => switchTab(tabFromUrl(), false));
 
     // ═══ ENTRANCE ANIMATIONS ═══
     window.addEventListener("loader-complete", () => {
